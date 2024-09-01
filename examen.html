@@ -1,0 +1,129 @@
+import java.util.Date;
+import java.util.List;
+
+// Clase que representa el gasto
+class Gasto {
+    private int id;
+    private long fecha; // En milisegundos desde epoch
+    private double monto;
+    private String descripcion;
+
+    public Gasto(int id, long fecha, double monto, String descripcion) {
+        this.id = id;
+        this.fecha = fecha;
+        this.monto = monto;
+        this.descripcion = descripcion;
+    }
+
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public long getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(long fecha) {
+        this.fecha = fecha;
+    }
+
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "Gasto{" +
+                "id=" + id +
+                ", fecha=" + new Date(fecha) +
+                ", monto=" + monto +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
+    }
+}
+
+// Clase que representa el presupuesto
+class Presupuesto {
+    private int id;
+    private String fechaInicio;
+    private String fechaFin;
+    private double montoPresupuestado;
+    private List<Gasto> gastos;
+
+    public Presupuesto(int id, String fechaInicio, String fechaFin, double montoPresupuestado, List<Gasto> gastos) {
+        this.id = id;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.montoPresupuestado = montoPresupuestado;
+        this.gastos = gastos;
+    }
+
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(String fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public double getMontoPresupuestado() {
+        return montoPresupuestado;
+    }
+
+    public void setMontoPresupuestado(double montoPresupuestado) {
+        this.montoPresupuestado = montoPresupuestado;
+    }
+
+    public List<Gasto> getGastos() {
+        return gastos;
+    }
+
+    public void setGastos(List<Gasto> gastos) {
+        this.gastos = gastos;
+    }
+
+    @Override
+    public String toString() {
+        return "Presupuesto{" +
+                "id=" + id +
+                ", fechaInicio='" + fechaInicio + '\'' +
+                ", fechaFin='" + fechaFin + '\'' +
+                ", montoPresupuestado=" + montoPresupuestado +
+                ", gastos=" + gastos +
+                '}';
+    }
+}
